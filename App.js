@@ -1,118 +1,26 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, TextInput, Button, FlatList } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  Button,
+  FlatList,
+} from "react-native";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-function LoginPage({ navigation }) {
-  return (
-    <View style={styles.container}>
-      <View>
-        <Text>Username</Text>
-        <TextInput style={styles.input} />
-      </View>
-      <View>
-        <Text>Password</Text>
-        <TextInput style={styles.input} />
-      </View>
-      <View>
-        <Button title="LOGIN" onPress={() => navigation.navigate("Listing")} />
-        <Button
-          title="SIGN UP"
-          onPress={() => navigation.navigate("Sign Up")}
-        />
-      </View>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
-
-function SignupPage({navigation}) {
-  return (
-    <View style={styles.container}>
-      <View>
-        <Text>Name</Text>
-        <TextInput style={styles.input} />
-      </View>
-      <View>
-        <Text>E-mail</Text>
-        <TextInput style={styles.input} />
-      </View>
-      <View>
-        <Text>Password</Text>
-        <TextInput style={styles.input} />
-      </View>
-      <View>
-        <Text>Gender</Text>
-        <TextInput style={styles.input} />
-      </View>
-      <View>
-        <Text>Date of Birth</Text>
-        <TextInput style={styles.input} />
-      </View>
-      <View>
-        <Button title="SIGN UP" onPress={() => navigation.navigate("Login")} />
-      </View>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
-
-function ListingPage({navigation}) {
-  return(
-    <View style={styles.container}>
-      <TextInput style={styles.input} placeholder="Search" />
-      <Button title="My details" onPress={() => navigation.navigate("User")}/>
-      {/* FlatList of funds */}
-      <Button title="Fund details" onPress={() => navigation.navigate("Fund Details")}/>
-      <StatusBar style="auto" />
-    </View>
-  )
-}
-
-function UserDetailsPage({navigation}) {
-  return(
-    <View style={styles.container}>
-      <View>
-        <Text>Name</Text>
-        <TextInput style={styles.input} />
-      </View>
-      <View>
-        <Text>E-mail</Text>
-        <TextInput style={styles.input} />
-      </View>
-      <View>
-        <Text>Password</Text>
-        <TextInput style={styles.input} />
-      </View>
-      <View>
-        <Text>Gender</Text>
-        <TextInput style={styles.input} />
-      </View>
-      <View>
-        <Text>Date of Birth</Text>
-        <TextInput style={styles.input} />
-      </View>
-      <View>
-        <Button title="Save" onPress={() => navigation.navigate("Listing")} />
-        <Button title="Logout" onPress={() => navigation.navigate("Login")} />
-      </View>
-      <StatusBar style="auto" />
-    </View>
-  )
-}
-function FundDetailsPage() {
-  return(
-    <View style={styles.container}>
-      <Text>DETAILS</Text>
-      <StatusBar style="auto" />
-    </View>
-  )
-}
-
+// import custom components
+import FundDetailsPage from "./components/FundDetailsPage";
+import ListingPage from "./components/ListingPage";
+import LoginPage from "./components/LoginPage";
+import SignUpPage from "./components/SignUpPage";
+import UserProfilePage from "./components/UserProfilePage";
 
 const Stack = createNativeStackNavigator();
 
+// navigation setup
 export default function App() {
   return (
     <NavigationContainer>
@@ -124,7 +32,7 @@ export default function App() {
         />
         <Stack.Screen
           name="Sign Up"
-          component={SignupPage}
+          component={SignUpPage}
           options={{ title: "Sign Up" }}
         />
         <Stack.Screen
@@ -134,7 +42,7 @@ export default function App() {
         />
         <Stack.Screen
           name="User"
-          component={UserDetailsPage}
+          component={UserProfilePage}
           options={{ title: "User details" }}
         />
         <Stack.Screen
