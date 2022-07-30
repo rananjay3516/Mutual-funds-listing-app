@@ -1,14 +1,19 @@
+
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, TextInput, Button, FlatList } from "react-native";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-export default function LoginPage({ navigation }) {
+export default function SignUpPage({ navigation }) {
     return (
       <View style={styles.container}>
         <View>
-          <Text>Username</Text>
+          <Text>Name</Text>
+          <TextInput style={styles.input} />
+        </View>
+        <View>
+          <Text>E-mail</Text>
           <TextInput style={styles.input} />
         </View>
         <View>
@@ -16,15 +21,17 @@ export default function LoginPage({ navigation }) {
           <TextInput style={styles.input} />
         </View>
         <View>
-          <Button title="LOGIN" onPress={() => navigation.navigate("Listing")} />
-          </View>
-          <View>
-          <Button title="SIGN UP"
-            onPress={() => navigation.navigate("Sign Up")}
-          />
-          </View>
-          
-        <StatusBar style="auto" />
+          <Text>Gender</Text>
+          <TextInput style={styles.input} />
+        </View>
+        <View>
+          <Text>Date of Birth</Text>
+          <TextInput style={styles.input} />
+        </View>
+        <View>
+          <Button title="SIGN UP" onPress={() => navigation.navigate("Listing")} />
+        </View>
+        
       </View>
     );
   }
@@ -43,4 +50,3 @@ export default function LoginPage({ navigation }) {
       padding: 10,
     },
   });
-  

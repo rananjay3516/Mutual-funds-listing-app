@@ -1,11 +1,10 @@
-
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, TextInput, Button, FlatList } from "react-native";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-export default function SignUpPage({ navigation }) {
+export default function UserProfilePage({ navigation }) {
     return (
       <View style={styles.container}>
         <View>
@@ -29,9 +28,9 @@ export default function SignUpPage({ navigation }) {
           <TextInput style={styles.input} />
         </View>
         <View>
-          <Button title="SIGN UP" onPress={() => navigation.navigate("Login")} />
+          <Button title="Save" onPress={() => navigation.navigate("Listing")} />
         </View>
-        <StatusBar style="auto" />
+        
       </View>
     );
   }
