@@ -35,16 +35,16 @@ export default function LoginPage({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
+  // container: {
+  //   flex: 1,
+  //   backgroundColor: "#fff",
+  //   alignItems: "center",
+  //   justifyContent: "center",
+  // },
   input: {
-    height: 40,
-    margin: 12,
+  //   height: 40,
+  //   margin: 12,
     borderWidth: 1,
-    padding: 10,
+  //   padding: 10,
   },
 });

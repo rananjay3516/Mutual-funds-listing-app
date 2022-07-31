@@ -1,12 +1,12 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-// import custom screens
-import FundDetailsPage from "./FundDetailsPage";
-import ListingPage from "./ListingPage";
-import LoginPage from "./LoginPage";
-import SignUpPage from "./SignUpPage";
-import UserProfilePage from "./UserProfilePage";
+// import screens
+import FundDetailsPage from "../screens/fundDetails";
+import ListingPage from "../screens/listing";
+import LoginPage from "../screens/login";
+import SignUpPage from "../screens/signUp";
+import UserProfilePage from "../screens/userProfile";
 
 const Stack = createNativeStackNavigator();
 
