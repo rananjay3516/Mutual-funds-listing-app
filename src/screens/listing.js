@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React, { useEffect, useState } from "react";
 import { ActivityIndicator, FlatList } from "react-native";
 
+
 export default function ListingPage({ navigation }) {
   const [isLoading, setLoading] = useState(true);
 
@@ -104,46 +105,97 @@ export default function ListingPage({ navigation }) {
     getFund5();
   }, []);
 
+  const displayData = [
+    {
+      name: fundMeta1.scheme_name,
+      fundHouse: fundMeta1.fund_house
+    },
+    {
+      name: fundMeta2.scheme_name,
+      fundHouse: fundMeta2.fund_house
+    },
+    {
+      name: fundMeta3.scheme_name,
+      fundHouse: fundMeta3.fund_house
+    },
+    {
+      name: fundMeta4.scheme_name,
+      fundHouse: fundMeta4.fund_house
+    },
+    {
+      name: fundMeta5.scheme_name,
+      fundHouse: fundMeta5.fund_house
+    },
+  ]
+
   return (
     <>
       <View>
-        <TextInput style={styles.input} placeholder="Search" />
-        <Button
+      <Button
           title="My profile"
           onPress={() => navigation.navigate("User")}
         />
+        <TextInput style={styles.input} placeholder="Search" />
+        
         <View style={styles.userList}>
           <Text>Fund List</Text>
         </View>
+        
+      </View>
+
+      <View style={styles.container}>
+      <Text>{fundMeta1.scheme_name}</Text>
+        <Text>{fundMeta1.fund_house}</Text>
+        
+    
         <Button
-          title="Funds detail"
-          onPress={() => navigation.navigate("Fund Details")}
+          title="Funds 1 details"
+          onPress={() => navigation.navigate("Fund 1 Details")}
         />
       </View>
 
       <View style={styles.container}>
-        <Text>{fundMeta1.fund_house}</Text>
-        <Text>{fundMeta1.scheme_name}</Text>
-      </View>
-
-      <View style={styles.container}>
+      <Text>{fundMeta2.scheme_name}</Text>
         <Text>{fundMeta2.fund_house}</Text>
-        <Text>{fundMeta2.scheme_name}</Text>
+        
+     
+        <Button
+          title="Funds 2 details"
+          onPress={() => navigation.navigate("Fund 2 Details")}
+        />
       </View>
 
       <View style={styles.container}>
+      <Text>{fundMeta3.scheme_name}</Text>
         <Text>{fundMeta3.fund_house}</Text>
-        <Text>{fundMeta3.scheme_name}</Text>
+        
+     
+        <Button
+          title="Funds 3 details"
+          onPress={() => navigation.navigate("Fund 3 Details")}
+        />
       </View>
 
       <View style={styles.container}>
+      <Text>{fundMeta4.scheme_name}</Text>
         <Text>{fundMeta4.fund_house}</Text>
-        <Text>{fundMeta4.scheme_name}</Text>
+        
+       
+        <Button
+          title="Funds 4 details"
+          onPress={() => navigation.navigate("Fund 4 Details")}
+        />
       </View>
 
       <View style={styles.container}>
+      <Text>{fundMeta5.scheme_name}</Text>
         <Text>{fundMeta5.fund_house}</Text>
-        <Text>{fundMeta5.scheme_name}</Text>
+        
+     
+        <Button
+          title="Funds 5 details"
+          onPress={() => navigation.navigate("Fund 5 Details")}
+        />
       </View>
 
      
