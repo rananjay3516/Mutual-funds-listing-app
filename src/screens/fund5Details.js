@@ -7,10 +7,22 @@ import {
   Button,
   FlatList,
   ActivityIndicator,
+  Dimensions,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+//chart
+import {
+  LineChart,
+  BarChart,
+  PieChart,
+  ProgressChart,
+  ContributionGraph,
+  StackedBarChart,
+} from "react-native-chart-kit";
+
 
 export default function FundDetailsPage() {
   const [isLoading, setLoading] = useState(true);
@@ -35,6 +47,53 @@ export default function FundDetailsPage() {
   }, []);
   return (
     <View>
+      
+      <Text>6 month NAV - 2013</Text>
+      <View>
+        {isLoading ? (
+          <ActivityIndicator />
+        ) : (
+          <LineChart
+            data={{
+              labels: ["January", "February", "March", "April", "May", "June"],
+              datasets: [
+                {
+                  // data: [25.33 ,25.56 ,25.70 ,25.85 ,26.15 , 26.39],
+                  data: [
+                    fundData5[149].nav,
+                    fundData5[127].nav,
+                    fundData5[108].nav,
+                    fundData5[89].nav,
+                    fundData5[71].nav,
+                    fundData5[49].nav,
+                  ],
+                  strokeWidth: 2, // optional
+                },
+              ],
+            }}
+            width={Dimensions.get("window").width}
+            height={220}
+            yAxisLabel={"Rs."}
+            fromZero={true}
+            chartConfig={{
+              backgroundColor: "#e26a00",
+              backgroundGradientFrom: "#fb8c00",
+              backgroundGradientTo: "#ffa726",
+              decimalPlaces: 2, // optional, defaults to 2dp
+              color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+              style: {
+                borderRadius: 16,
+              },
+            }}
+            bezier
+            style={{
+              marginVertical: 8,
+              borderRadius: 16,
+            }}
+          />
+        )}
+      </View>
+      
       <View style={styles.container}>
         <Text>{fundMeta5.scheme_name}</Text>
         <Text>{fundMeta5.fund_house}</Text>
@@ -42,22 +101,7 @@ export default function FundDetailsPage() {
         <Text>{fundMeta5.scheme_category}</Text>
         <Text>{fundMeta5.scheme_code}</Text>
       </View>
-      <View>
-        {isLoading ? (
-          <ActivityIndicator />
-        ) : (
-          <FlatList
-            // set to variable fund
-            data={fundData5}
-            keyExtractor={({ id }, index) => id}
-            renderItem={({ item }) => (
-              <Text>
-                {item.date}, {item.nav}
-              </Text>
-            )}
-          />
-        )}
-      </View>
+      
     </View>
   );
 }
