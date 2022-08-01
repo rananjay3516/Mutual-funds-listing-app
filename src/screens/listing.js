@@ -8,9 +8,6 @@ import {
   Pressable,
 } from "react-native";
 
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
 import React, { useEffect, useState } from "react";
 
 // import styles
@@ -114,6 +111,7 @@ export default function ListingPage({ navigation }) {
     getFund5();
   }, []);
 
+  // store funds data fetched from API
   const displayData = [
     {
       id: "Fund 1 Details",
@@ -159,7 +157,13 @@ export default function ListingPage({ navigation }) {
           >
             Fund Name:
           </Text>
-          <Text style={{ color: GlobalStyles.colors.primary1, fontSize: 18, fontFamily: "serif" }}>
+          <Text
+            style={{
+              color: GlobalStyles.colors.primary1,
+              fontSize: 18,
+              fontFamily: "serif",
+            }}
+          >
             {fundName}
           </Text>
           <Text
@@ -171,7 +175,13 @@ export default function ListingPage({ navigation }) {
           >
             Fund House:
           </Text>
-          <Text style={{ color: GlobalStyles.colors.primary1, fontSize: 18, fontFamily: "serif" }}>
+          <Text
+            style={{
+              color: GlobalStyles.colors.primary1,
+              fontSize: 18,
+              fontFamily: "serif",
+            }}
+          >
             {fundHouse}
           </Text>
           <Text></Text>
@@ -225,12 +235,10 @@ const styles = StyleSheet.create({
   },
   searchText: {
     fontSize: 16,
-    // fontWeight: "bold",
     color: GlobalStyles.colors.black,
   },
   profile: {
     fontSize: 16,
-    // fontWeight: "bold",
     color: GlobalStyles.colors.secondary2,
     flexDirection: "row-reverse",
     padding: 14,
@@ -251,67 +259,5 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     justifyContent: "space-between",
     elevation: 3,
-    // marginHorizontal: 16,
-    // alignItems: "center",
-    // backgroundColor: '#f5f520',
-    // padding: 20,
-    // marginVertical: 8,
-    // marginHorizontal: 16,
   },
-  // fundData: {
-  //   paddingVertical: 24,
-  //   backgroundColor: "white",
-  //   fontSize: 32,
-  // },
 });
-
-{
-  /* <Text>{displayData[0].name}</Text>
-        <Text>{displayData[0].fundHouse}</Text>
-        
-        
-      </View>
-
-      <View style={styles.container}>
-      <Text>{displayData[1].name}</Text>
-        <Text>{displayData[1].fundHouse}</Text>
-        
-        <Button
-          title="Funds 2 details"
-          onPress={() => navigation.navigate("Fund 2 Details")}
-        />
-      </View>
-
-      <View style={styles.container}>
-      <Text>{displayData[2].name}</Text>
-        <Text>{displayData[2].fundHouse}</Text>
-        
-     
-        <Button
-          title="Funds 3 details"
-          onPress={() => navigation.navigate("Fund 3 Details")}
-        />
-      </View>
-
-      <View style={styles.container}>
-      <Text>{displayData[3].name}</Text>
-        <Text>{displayData[3].fundHouse}</Text>
-        
-       
-        <Button
-          title="Funds 4 details"
-          onPress={() => navigation.navigate("Fund 4 Details")}
-        />
-      </View>
-
-      <View style={styles.container}>
-      <Text>{displayData[4].name}</Text>
-        <Text>{displayData[4].fundHouse}</Text>
-        
-     
-        <Button
-          title="Funds 5 details"
-          onPress={() => navigation.navigate("Fund 5 Details")}
-        />
-      </View> */
-}

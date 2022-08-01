@@ -1,14 +1,4 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  Button,
-  FlatList,
-} from "react-native";
-
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { StyleSheet, View, Button } from "react-native";
 
 import UserForm from "../components/userForm";
 
@@ -16,7 +6,6 @@ import UserForm from "../components/userForm";
 import { GlobalStyles } from "../constants/styles";
 
 export default function SignUpPage({ navigation }) {
-  
   return (
     <View style={styles.container}>
       <UserForm />
@@ -24,10 +13,10 @@ export default function SignUpPage({ navigation }) {
         <Button
           title="SIGN UP"
           onPress={() => navigation.navigate("Listing")}
-          color= {GlobalStyles.colors.secondary1}
+          color={GlobalStyles.colors.secondary1}
         />
       </View>
-      </View>
+    </View>
   );
 }
 

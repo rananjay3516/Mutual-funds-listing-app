@@ -1,26 +1,18 @@
-import { StatusBar } from "expo-status-bar";
+
 import {
   StyleSheet,
   Text,
   View,
-  TextInput,
-  Button,
-  FlatList,
+  
   ActivityIndicator,
-  Dimensions
+  
 } from "react-native";
 import React, { useEffect, useState } from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
 
 //chart
 import {
-  LineChart,
-  BarChart,
-  PieChart,
-  ProgressChart,
-  ContributionGraph,
-  StackedBarChart,
+  LineChart
 } from "react-native-chart-kit";
 
 // import styles
@@ -71,7 +63,7 @@ export default function FundDetailsPage() {
                     fundData2[46].nav,
                     fundData2[25].nav,
                   ],
-                  strokeWidth: 2, // optional
+                  strokeWidth: 2, 
                 },
               ],
             }}
@@ -83,7 +75,7 @@ export default function FundDetailsPage() {
               backgroundColor: "#e26a00",
               backgroundGradientFrom: "#fb8c00",
               backgroundGradientTo: "#ffa726",
-              decimalPlaces: 2, // optional, defaults to 2dp
+              decimalPlaces: 2, 
               color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
               style: {
                 borderRadius: 16,

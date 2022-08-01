@@ -1,27 +1,8 @@
-import { StatusBar } from "expo-status-bar";
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  Button,
-  FlatList,
-  ActivityIndicator,
-  Dimensions,
-} from "react-native";
+import { StyleSheet, Text, View, ActivityIndicator } from "react-native";
 import React, { useEffect, useState } from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 //chart
-import {
-  LineChart,
-  BarChart,
-  PieChart,
-  ProgressChart,
-  ContributionGraph,
-  StackedBarChart,
-} from "react-native-chart-kit";
+import { LineChart } from "react-native-chart-kit";
 
 // import styles
 import { GlobalStyles } from "../constants/styles";
@@ -50,7 +31,6 @@ export default function FundDetailsPage() {
 
   return (
     <View style={styles.container}>
-      
       <Text style={styles.entry}>6 month NAV - 2007</Text>
       <View>
         {isLoading ? (
@@ -70,7 +50,7 @@ export default function FundDetailsPage() {
                     fundData4[242].nav,
                     fundData4[222].nav,
                   ],
-                  strokeWidth: 2, // optional
+                  strokeWidth: 2,
                 },
               ],
             }}
@@ -82,7 +62,7 @@ export default function FundDetailsPage() {
               backgroundColor: "#e26a00",
               backgroundGradientFrom: "#fb8c00",
               backgroundGradientTo: "#ffa726",
-              decimalPlaces: 2, // optional, defaults to 2dp
+              decimalPlaces: 2,
               color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
               style: {
                 borderRadius: 16,
@@ -96,7 +76,7 @@ export default function FundDetailsPage() {
           />
         )}
       </View>
-      
+
       <View style={styles.data}>
         <Text style={styles.label}>Scheme Name: </Text>
         <Text style={styles.entry}>{fundMeta4.scheme_name}</Text>
@@ -113,7 +93,6 @@ export default function FundDetailsPage() {
         <Text style={styles.label}>Scheme Code: </Text>
         <Text style={styles.entry}>{fundMeta4.scheme_code}</Text>
       </View>
-      
     </View>
   );
 }
@@ -123,7 +102,6 @@ const styles = StyleSheet.create({
     padding: 24,
     backgroundColor: GlobalStyles.colors.primary3,
     flex: 1,
-    
   },
   data: {
     padding: 24,
@@ -131,12 +109,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   label: {
-    fontFamily: 'serif',
+    fontFamily: "serif",
     fontSize: 18,
     color: GlobalStyles.colors.secondary1,
   },
   entry: {
-    fontFamily: 'serif',
+    fontFamily: "serif",
     fontSize: 18,
     color: GlobalStyles.colors.primary1,
   },
