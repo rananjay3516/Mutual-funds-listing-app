@@ -12,13 +12,19 @@ import Fund3DetailsPage from "../screens/fund3Details";
 import Fund4DetailsPage from "../screens/fund4Details";
 import Fund5DetailsPage from "../screens/fund5Details";
 
+// import styles
+import { GlobalStyles } from "../constants/styles";
+
 
 const Stack = createNativeStackNavigator();
 
 export default function Navigator() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{
+        headerStyle: {backgroundColor: GlobalStyles.colors.primary1},
+        headerTintColor: GlobalStyles.colors.secondary2
+      }}>
         <Stack.Screen
           name="Login"
           component={LoginPage}

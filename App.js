@@ -4,7 +4,7 @@ import { StatusBar } from "expo-status-bar";
 import Navigator from "./src/components/navigator";
 
 // redux store
-import { store } from "./src/redux/store";
+import { store } from "./src/store/store";
 import { Provider } from "react-redux";
 
 export default function App() {

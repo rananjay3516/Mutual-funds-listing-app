@@ -23,6 +23,9 @@ import {
   StackedBarChart,
 } from "react-native-chart-kit";
 
+// import styles
+import { GlobalStyles } from "../constants/styles";
+
 export default function FundDetailsPage() {
   const [isLoading, setLoading] = useState(true);
 
@@ -46,8 +49,8 @@ export default function FundDetailsPage() {
   }, []);
 
   return (
-    <View>
-      <Text>6 month NAV - 2022</Text>
+    <View style={styles.container}>
+      <Text style={styles.entry}>6 month NAV - 2022</Text>
       <View>
         {isLoading ? (
           <ActivityIndicator />
@@ -70,7 +73,7 @@ export default function FundDetailsPage() {
                 },
               ],
             }}
-            width={Dimensions.get("window").width}
+            width={350}
             height={220}
             yAxisLabel={"Rs."}
             fromZero={true}
@@ -93,30 +96,48 @@ export default function FundDetailsPage() {
         )}
       </View>
 
-      <View style={styles.container}>
-        <Text>{fundMeta3.scheme_name}</Text>
-        <Text>{fundMeta3.fund_house}</Text>
-        <Text>{fundMeta3.scheme_type}</Text>
-        <Text>{fundMeta3.scheme_category}</Text>
-        <Text>{fundMeta3.scheme_code}</Text>
+      <View style={styles.data}>
+        <Text style={styles.label}>Scheme Name: </Text>
+        <Text style={styles.entry}>{fundMeta3.scheme_name}</Text>
+        <Text></Text>
+        <Text style={styles.label}>Fund House: </Text>
+        <Text style={styles.entry}>{fundMeta3.fund_house}</Text>
+        <Text></Text>
+        <Text style={styles.label}>Scheme Type: </Text>
+        <Text style={styles.entry}>{fundMeta3.scheme_type}</Text>
+        <Text></Text>
+        <Text style={styles.label}>Scheme Category: </Text>
+        <Text style={styles.entry}>{fundMeta3.scheme_category}</Text>
+        <Text></Text>
+        <Text style={styles.label}>Scheme Code: </Text>
+        <Text style={styles.entry}>{fundMeta3.scheme_code}</Text>
       </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  // container: {
-  //   flex: 1,
-  //   backgroundColor: "#fff",
-  //   alignItems: "center",
-  //   justifyContent: "center",
-  // },
-  // input: {
-  //   height: 40,
-  //   margin: 12,
-  //   borderWidth: 1,
-  //   padding: 10,
-  // },
+  container: {
+    padding: 24,
+    backgroundColor: GlobalStyles.colors.primary3,
+    flex: 1,
+    
+  },
+  data: {
+    padding: 24,
+    backgroundColor: GlobalStyles.colors.primary3,
+    flex: 1,
+  },
+  label: {
+    fontFamily: 'serif',
+    fontSize: 18,
+    color: GlobalStyles.colors.secondary1,
+  },
+  entry: {
+    fontFamily: 'serif',
+    fontSize: 18,
+    color: GlobalStyles.colors.primary1,
+  },
   userList: {
     flex: 1,
     justifyContent: "center",

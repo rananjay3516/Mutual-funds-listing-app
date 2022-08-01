@@ -7,12 +7,15 @@ import { useSelector, useDispatch } from "react-redux";
 
 import UserForm from "../components/userForm";
 
+// import styles
+import { GlobalStyles } from "../constants/styles";
+
 export default function UserProfilePage({ navigation }) {
     return (
       <View style={styles.container}>
         <UserForm />
         <View>
-          <Button title="Save" onPress={() => navigation.navigate("Listing")} />
+          <Button title="Save" onPress={() => navigation.navigate("Listing")} color= {GlobalStyles.colors.primary1}/>
         </View>
       </View>
       
@@ -20,16 +23,9 @@ export default function UserProfilePage({ navigation }) {
   }
 
   const styles = StyleSheet.create({
-    // container: {
-    //   flex: 1,
-    //   backgroundColor: "#fff",
-    //   alignItems: "center",
-    //   justifyContent: "center",
-    // },
-    // input: {
-    //   height: 40,
-    //   margin: 12,
-    //   borderWidth: 1,
-    //   padding: 10,
-    // },
+    container: {
+      padding: 24,
+      backgroundColor: GlobalStyles.colors.primary3,
+      flex: 1,
+    },
   });

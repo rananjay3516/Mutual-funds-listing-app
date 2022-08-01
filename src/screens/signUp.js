@@ -12,15 +12,19 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import UserForm from "../components/userForm";
 
+// import styles
+import { GlobalStyles } from "../constants/styles";
+
 export default function SignUpPage({ navigation }) {
   
   return (
-    <View>
+    <View style={styles.container}>
       <UserForm />
       <View>
         <Button
           title="SIGN UP"
           onPress={() => navigation.navigate("Listing")}
+          color= {GlobalStyles.colors.secondary1}
         />
       </View>
       </View>
@@ -28,16 +32,9 @@ export default function SignUpPage({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  // container: {
-  //   flex: 1,
-  //   backgroundColor: "#fff",
-  //   alignItems: "center",
-  //   justifyContent: "center",
-  // },
-  // input: {
-  //   height: 40,
-  //   margin: 12,
-    borderWidth: 1,
-  //   padding: 10,
-  // },
+  container: {
+    padding: 24,
+    backgroundColor: GlobalStyles.colors.primary3,
+    flex: 1,
+  },
 });
