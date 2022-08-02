@@ -13,13 +13,20 @@ export default function LoginPage({ navigation }) {
 
       <View style={styles.fieldPassword}>
         <Text style={styles.text}>Password</Text>
-        <TextInput style={styles.input} />
+        <TextInput style={styles.input} secureTextEntry={true} />
       </View>
 
-      <View>
+      <View style={styles.button}>
+        <Button
+          title="LOGIN"
+          onPress={() => navigation.navigate("User")}
+          color={GlobalStyles.colors.primary1}
+        />
+      </View>
+      <View style={styles.button}>
         <Button
           title="SIGN UP"
-          onPress={() => navigation.navigate("Sign Up")}
+          onPress={() => navigation.navigate("User")}
           color={GlobalStyles.colors.secondary1}
         />
       </View>
@@ -45,9 +52,15 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     fontFamily: "serif",
     color: GlobalStyles.colors.primary1,
+    textAlign: "center",
   },
   input: {
     borderWidth: 1,
     height: 40,
+    textAlign: "center",
+  },
+  button: {
+    padding: 10,
+    borderRadius: 14,
   },
 });

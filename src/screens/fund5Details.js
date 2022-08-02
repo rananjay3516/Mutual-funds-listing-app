@@ -49,7 +49,7 @@ export default function FundDetailsPage() {
                     fundData5[71].nav,
                     fundData5[49].nav,
                   ],
-                  strokeWidth: 2, 
+                  strokeWidth: 2,
                 },
               ],
             }}
@@ -61,7 +61,7 @@ export default function FundDetailsPage() {
               backgroundColor: "#e26a00",
               backgroundGradientFrom: "#fb8c00",
               backgroundGradientTo: "#ffa726",
-              decimalPlaces: 2, 
+              decimalPlaces: 2,
               color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
               style: {
                 borderRadius: 16,

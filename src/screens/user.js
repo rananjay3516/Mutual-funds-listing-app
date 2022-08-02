@@ -5,15 +5,15 @@ import UserForm from "../components/userForm";
 // import styles
 import { GlobalStyles } from "../constants/styles";
 
-export default function UserProfilePage({ navigation }) {
+export default function SignUpPage({ navigation }) {
   return (
     <View style={styles.container}>
       <UserForm />
-      <View>
+      <View style={styles.button}>
         <Button
-          title="Save"
+          title="SAVE"
           onPress={() => navigation.navigate("Listing")}
-          color={GlobalStyles.colors.primary1}
+          color={GlobalStyles.colors.secondary1}
         />
       </View>
     </View>
@@ -25,5 +25,9 @@ const styles = StyleSheet.create({
     padding: 24,
     backgroundColor: GlobalStyles.colors.primary3,
     flex: 1,
+  },
+  button: {
+    padding: 10,
+    borderRadius: 14,
   },
 });

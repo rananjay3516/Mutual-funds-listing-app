@@ -1,27 +1,14 @@
-
-import {
-  StyleSheet,
-  Text,
-  View,
-  
-  ActivityIndicator,
-  
-} from "react-native";
+import { StyleSheet, Text, View, ActivityIndicator } from "react-native";
 import React, { useEffect, useState } from "react";
 
-
 //chart
-import {
-  LineChart
-} from "react-native-chart-kit";
+import { LineChart } from "react-native-chart-kit";
 
 // import styles
 import { GlobalStyles } from "../constants/styles";
 
-
 export default function FundDetailsPage() {
   const [isLoading, setLoading] = useState(true);
-
 
   //get fund 2
   const [fundData2, setFundData2] = useState([]);
@@ -41,7 +28,7 @@ export default function FundDetailsPage() {
   useEffect(() => {
     getFund2();
   }, []);
-  
+
   return (
     <View style={styles.container}>
       <Text style={styles.entry}>6 month NAV - 2014</Text>
@@ -63,7 +50,7 @@ export default function FundDetailsPage() {
                     fundData2[46].nav,
                     fundData2[25].nav,
                   ],
-                  strokeWidth: 2, 
+                  strokeWidth: 2,
                 },
               ],
             }}
@@ -75,7 +62,7 @@ export default function FundDetailsPage() {
               backgroundColor: "#e26a00",
               backgroundGradientFrom: "#fb8c00",
               backgroundGradientTo: "#ffa726",
-              decimalPlaces: 2, 
+              decimalPlaces: 2,
               color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
               style: {
                 borderRadius: 16,
@@ -105,7 +92,6 @@ export default function FundDetailsPage() {
         <Text style={styles.label}>Scheme Code: </Text>
         <Text style={styles.entry}>{fundMeta2.scheme_code}</Text>
       </View>
-      
     </View>
   );
 }
@@ -115,7 +101,6 @@ const styles = StyleSheet.create({
     padding: 24,
     backgroundColor: GlobalStyles.colors.primary3,
     flex: 1,
-    
   },
   data: {
     padding: 24,
@@ -123,12 +108,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   label: {
-    fontFamily: 'serif',
+    fontFamily: "serif",
     fontSize: 18,
     color: GlobalStyles.colors.secondary1,
   },
   entry: {
-    fontFamily: 'serif',
+    fontFamily: "serif",
     fontSize: 18,
     color: GlobalStyles.colors.primary1,
   },

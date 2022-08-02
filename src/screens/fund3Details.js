@@ -50,7 +50,7 @@ export default function FundDetailsPage() {
                     fundData3[63].nav,
                     fundData3[42].nav,
                   ],
-                  strokeWidth: 2, 
+                  strokeWidth: 2,
                 },
               ],
             }}

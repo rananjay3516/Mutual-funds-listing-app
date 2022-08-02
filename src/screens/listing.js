@@ -187,6 +187,7 @@ export default function ListingPage({ navigation }) {
           <Text></Text>
           <Text></Text>
           <Text></Text>
+          <Text></Text>
         </View>
       </Pressable>
     );

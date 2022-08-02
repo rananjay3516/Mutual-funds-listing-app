@@ -4,8 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 // import screens
 import ListingPage from "../screens/listing";
 import LoginPage from "../screens/login";
-import SignUpPage from "../screens/signUp";
-import UserProfilePage from "../screens/userProfile";
+import UserPage from "../screens/user";
 import Fund1DetailsPage from "../screens/fund1Details";
 import Fund2DetailsPage from "../screens/fund2Details";
 import Fund3DetailsPage from "../screens/fund3Details";
@@ -15,35 +14,31 @@ import Fund5DetailsPage from "../screens/fund5Details";
 // import styles
 import { GlobalStyles } from "../constants/styles";
 
-
 const Stack = createNativeStackNavigator();
 
 export default function Navigator() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{
-        headerStyle: {backgroundColor: GlobalStyles.colors.primary1},
-        headerTintColor: GlobalStyles.colors.secondary2
-      }}>
+      <Stack.Navigator
+        screenOptions={{
+          headerStyle: { backgroundColor: GlobalStyles.colors.primary1 },
+          headerTintColor: GlobalStyles.colors.secondary2,
+        }}
+      >
         <Stack.Screen
           name="Login"
           component={LoginPage}
           options={{ title: "Login/Sign Up" }}
         />
         <Stack.Screen
-          name="Sign Up"
-          component={SignUpPage}
-          options={{ title: "Sign Up" }}
+          name="User"
+          component={UserPage}
+          options={{ title: "User" }}
         />
         <Stack.Screen
           name="Listing"
           component={ListingPage}
           options={{ title: "Listing" }}
-        />
-        <Stack.Screen
-          name="User"
-          component={UserProfilePage}
-          options={{ title: "User details" }}
         />
         <Stack.Screen
           name="Fund 1 Details"
